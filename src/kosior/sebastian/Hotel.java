@@ -1,5 +1,6 @@
 package kosior.sebastian;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,15 +31,18 @@ public class Hotel {
         }
     }
 
-    public void makeReservation(String guestName, int roomNumber) {
+    public void makeReservation(String guestName, int roomNumber, LocalDate checkIn, LocalDate checkOut) {
         Room room = findRoom(roomNumber);
         if (room != null && room.isAvailable()) {
-            Reservation reservation = new Reservation(guestName, room);
+            Reservation reservation = new Reservation(guestName, room, checkIn, checkOut);
             reservations.add(reservation);
+            int cost = (int) PaymentSystem.calculateCost(room, checkIn, checkOut);
             System.out.println("Rezerwacja udana!");
+            System.out.println("Będzie ona kosztowac: " + cost + "Pln");
         } else {
             System.out.println("Pokój " + roomNumber + " jest niedostępny.");
         }
+
     }
 
     private Room findRoom(int roomNumber) {

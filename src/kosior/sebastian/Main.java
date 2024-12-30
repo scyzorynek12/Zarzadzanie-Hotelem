@@ -1,5 +1,6 @@
 package kosior.sebastian;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +10,7 @@ public class Main {
 
         while (true) {
             System.out.println("\n===== Menu =====");
-            System.out.println("1. Pokaż dostępne pokoje");
+            System.out.println("1. Pokaż pokoje");
             System.out.println("2. Pokaż rezerwacje");
             System.out.println("3. Zarezerwuj pokój");
             System.out.println("4. Wyjście");
@@ -31,7 +32,12 @@ public class Main {
                     String guestName = scanner.nextLine();
                     System.out.print("Podaj numer pokoju: ");
                     int roomNumber = scanner.nextInt();
-                    hotel.makeReservation(guestName, roomNumber);
+                    scanner.nextLine();
+                    System.out.println("Wprowadź datę zameldowania (YYYY-MM-DD): ");
+                    LocalDate checkIn = LocalDate.parse(scanner.nextLine());
+                    System.out.println("Wprowadź datę wymeldowania (YYYY-MM-DD): ");
+                    LocalDate checkOut = LocalDate.parse(scanner.nextLine());
+                    hotel.makeReservation(guestName, roomNumber, checkIn, checkOut);
                     break;
                 case 4:
                     System.out.println("Dziękujemy za skorzystanie z serwisu!");

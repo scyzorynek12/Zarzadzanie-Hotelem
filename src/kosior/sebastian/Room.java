@@ -3,10 +3,16 @@ package kosior.sebastian;
 public class Room {
     private int number;
     private boolean isAvailable;
+    private Type type;
+
+    public Type getType() {
+        return type;
+    }
 
     public Room(int number) {
         this.number = number;
         this.isAvailable = true;
+        this.type = Type.getRandomType();
     }
 
     public int getNumber() {
@@ -25,13 +31,9 @@ public class Room {
         }
     }
 
-    public void release() {
-        isAvailable = true;
-    }
-
     @Override
     public String toString() {
-        return "Pokój " + number + " - " + (isAvailable ? "Dostępny" : "Zajęty");
+        return "Pokój " + number + " - " + type.getDescription() + " jest "  + (isAvailable ? "Dostępny" : "Zajęty");
     }
 }
 
