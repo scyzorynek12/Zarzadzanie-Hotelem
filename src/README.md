@@ -85,7 +85,7 @@ src/<br>
 <li>Status: Stabilny</li>
 <li>Ostatnia aktualizacja: 09.01.2025</li>
 </ul>
-<h3>👥 Autorzy</h3>
+<h3>👥 Autor</h3>
 <ul>
 <li>Sebastian Kosior</li>
 </ul>
