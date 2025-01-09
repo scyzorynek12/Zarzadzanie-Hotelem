@@ -9,7 +9,7 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Hotel hotel = new Hotel(20); // Zwiększamy liczbę pokoi do 20
+        Hotel hotel = new Hotel(20);
 
         while (true) {
             System.out.println("\n===== System Rezerwacji Hotelu =====");
