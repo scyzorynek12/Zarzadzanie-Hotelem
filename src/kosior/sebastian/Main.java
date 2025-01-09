@@ -140,7 +140,6 @@ public class Main {
             System.out.printf("%s sezon: x%.1f%n", season.getDescription(),
                     PaymentSystem.SEASON_MULTIPLIERS.get(season));
         }
-
         System.out.println("\nZniżki:");
         System.out.println("- 10% dla pobytów dłuższych niż 7 dni");
     }
